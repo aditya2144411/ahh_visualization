@@ -1,35 +1,33 @@
-# 📊 Adit Assistant v3.0
+# 🌍 AHH Visualization Project
 
-Program ini dibuat sebagai bagian dari pembelajaran Python dasar.  
-Tujuan project ini adalah:
-- Membuat program interaktif berbasis menu
-- Mengelola data Angka Harapan Hidup (AHH) tiap provinsi
-- Menyimpan data ke dalam file CSV & Excel
-- Mengelola hobi pengguna dan menyimpannya ke file
+Visualisasi Angka Harapan Hidup (AHH) berdasarkan provinsi di Indonesia menggunakan Python & GeoJSON.
 
-## 📁 Fitur Utama
-- Cek AHH per provinsi
-- Input dan simpan data AHH baru
-- Simpan ke CSV (`ahh_data.csv`)
-- Input & simpan daftar hobi (`hobi.txt`)
-- Save AHH data ke file Excel (`ahh_data.xlsx`)
+## 🧾 Deskripsi
+Proyek ini bertujuan untuk:
+- Menampilkan **peta interaktif** dan **heatmap AHH** per provinsi
+- Menggunakan data dari **BPS Indonesia** (2020–2023)
+- Menggabungkan data numerik dan spasial dalam bentuk **GeoJSON** + **Excel**
 
-## 📊 Dataset
-File `ahh_data.xlsx` berisi data AHH (Angka Harapan Hidup) berdasarkan provinsi.  
-Data bisa digunakan untuk visualisasi lebih lanjut (heatmap, bar chart, dll).
+## 📂 Fitur
+- 📊 Heatmap interaktif
+- 🗺️ Peta Indonesia dengan overlay data AHH
+- 💾 Data sumber dalam Excel
+- 💻 Kode Python untuk visualisasi otomatis
 
-## 🛠️ Tech Stack
-- Python 3.x
-- Pandas
-- Visual Studio Code
-- Git + GitHub
+## 📌 Tools
+- Python
+- Pandas, Matplotlib
+- GeoPandas
+- Jupyter / VS Code
 
-## 👨‍💻 Author
-👤 **Mohammad Aditya**  
-📚 Mahasiswa Teknik Industri  
-🔗 [LinkedIn](www.linkedin.com/in/mohammadaditya)  
-🐙 GitHub: [@aditya2144411](https://github.com/aditya2144411)
+## 🧠 Author
+**Mohammad Aditya**  
+Industrial Engineering Student  
+📍 Universitas Jenderal Achmad Yani  
+🧑‍💻 [GitHub](https://github.com/aditya2144411)
 
 ---
 
-> This project is part of my journey to become a Data-Driven Industrial Engineer 👷‍♂️📈
+## 📁 Data Sumber
+- `ahh_data.xlsx` — data AHH per provinsi
+- `indonesia.geojson` — data peta wilayah
