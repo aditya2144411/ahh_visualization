@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-df = pd.read_excel("C:/Users/ASUSX550I/Downloads/Book1.xlsx", skiprows=3)
+df = pd.read_excel("ahh_data.xlsx", skiprows=3)
 
 df.columns = [
     "Provinsi", 
@@ -28,14 +28,10 @@ plt.tight_layout()
 plt.show()
 
 df_2023_p = df_long[(df_long['Tahun'] == 2023) & (df_long['JK'] == 'P')]
-
 df_2023_p_sorted = df_2023_p.sort_values(by='AHH', ascending=False).head(10)
 
-import matplotlib.pyplot as plt
-import seaborn as sns
-
 plt.figure(figsize=(10, 6))
-sns.barplot(data=df_2023_p_sorted, x="AHH", y="Provinsi", palette="flare")
+sns.barplot(data=df_2023_p_sorted, x="AHH", y="Provinsi", hue="Provinsi", palette="flare", legend=False)
 
 plt.title("Top 10 Provinsi dengan AHH Perempuan Tertinggi Tahun 2023")
 plt.xlabel("Angka Harapan Hidup")
@@ -47,7 +43,7 @@ df_2023_l = df_long[(df_long['Tahun'] == 2023) & (df_long['JK'] == 'L')]
 df_2023_l_sorted = df_2023_l.sort_values(by='AHH', ascending=False).head(10)
 
 plt.figure(figsize=(10, 6))
-sns.barplot(data=df_2023_l_sorted, x="AHH", y="Provinsi", palette="crest")
+sns.barplot(data=df_2023_l_sorted, x="AHH", y="Provinsi", hue="Provinsi", palette="crest", legend=False)
 
 plt.title("Top 10 Provinsi dengan AHH Laki-laki Tertinggi Tahun 2023")
 plt.xlabel("Angka Harapan Hidup")
@@ -56,9 +52,7 @@ plt.tight_layout()
 plt.show()
 
 df_2023 = df_long[df_long["Tahun"] == 2023]
-
 df_pivot = df_2023.pivot(index="Provinsi", columns="JK", values="AHH").reset_index()
-
 df_pivot = df_pivot.sort_values(by="P", ascending=False)
 
 plt.figure(figsize=(12, 8))
@@ -73,7 +67,6 @@ plt.tight_layout()
 plt.show()
 
 df_p = df_long[df_long['JK'] == 'P']
-
 heatmap_data = df_p.pivot(index='Provinsi', columns='Tahun', values='AHH')
 
 plt.figure(figsize=(12, 12))
@@ -86,7 +79,6 @@ plt.tight_layout()
 plt.show()
 
 df_l = df_long[df_long['JK'] == 'L']
-
 heatmap_l = df_l.pivot(index='Provinsi', columns='Tahun', values='AHH')
 
 plt.figure(figsize=(12, 12))
@@ -98,12 +90,8 @@ plt.ylabel("Provinsi")
 plt.tight_layout()
 plt.show()
 
-df_p = df_long[df_long['JK'] == 'P']
-pivot_p = df_p.pivot(index='Provinsi', columns='Tahun', values='AHH')
-
-df_l = df_long[df_long['JK'] == 'L']
-pivot_l = df_l.pivot(index='Provinsi', columns='Tahun', values='AHH')
-
+pivot_p = df_long[df_long['JK'] == 'P'].pivot(index='Provinsi', columns='Tahun', values='AHH')
+pivot_l = df_long[df_long['JK'] == 'L'].pivot(index='Provinsi', columns='Tahun', values='AHH')
 gap_ahh = pivot_p - pivot_l
 
 plt.figure(figsize=(12, 12))
